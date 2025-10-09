@@ -276,6 +276,8 @@ export default class Settings {
             LS.remove('cache');
             LS.remove('custom');
             LS.remove('custom_hash');
+            LS.remove('custom_css');
+            LS.remove('custom_css_hash');
             LS.set('SETTINGS_V', SETTINGS_V);
         }
 
@@ -284,7 +286,15 @@ export default class Settings {
         if (LS.has('auth')) this.auth = LS.get('auth');
 
         if (LS.has('cache')) {
+            
             if (LS.has('custom')) this.registerCustom(LS.get('custom'));
+            
+            if (LS.has('custom_css'))
+            {
+                let style = document.head.appendChild(document.createElement('style'));
+                style.textContent = LS.get('custom_css');
+            }
+            
             this.fromCache = true;
             this.renderUI(LS.get('cache'));
         }
@@ -461,7 +471,7 @@ export default class Settings {
                                 window.location.reload();
                             }
                         } else {
-                            popup('Custom load error');
+                            popup('Custom css load error');
                         }
                     }
                 } else {
