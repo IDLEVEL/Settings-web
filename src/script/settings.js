@@ -448,6 +448,27 @@ export default class Settings {
 
                 if (packet.ws_port) this.wsr.init(this.base_url, packet.ws_port);
 
+                if (packet.custom_css_hash) {
+                    if (!LS.has('custom_css_hash') || packet.custom_css_hash != LS.get('custom_css_hash')) {
+                        let res = await fetchTimeout(this.makeUrl('custom.css'), Config.requestTout);
+                        if (res) {
+                            let css = await res.text();
+                            if (css) {
+                                
+                                LS.set('custom_css', css);
+                                LS.set('custom_hash', packet.custom_css_hash);
+                                
+                                window.location.reload();
+                            }
+                        } else {
+                            popup('Custom load error');
+                        }
+                    }
+                } else {
+                    LS.remove('custom_css');
+                    LS.remove('custom_css_hash');
+                }
+
                 if (packet.custom_hash) {
                     if (!LS.has('custom_hash') || packet.custom_hash != LS.get('custom_hash')) {
                         let res = await fetchTimeout(this.makeUrl('custom.js'), Config.requestTout);
