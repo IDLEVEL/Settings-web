@@ -9,7 +9,7 @@ export default class LogWidget extends WidgetBase {
 
         super.addChild(EL.make('div', {
             context: this,
-            class: 'log',
+            class: 'log' + (data.class ? ` ${data.class}` : '') + (data.id ? ` log_${data.id}` : ''),
             $: 'out',
             events: {
                 scroll: () => {

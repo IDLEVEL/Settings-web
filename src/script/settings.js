@@ -466,7 +466,7 @@ export default class Settings {
                             if (css) {
                                 
                                 LS.set('custom_css', css);
-                                LS.set('custom_hash', packet.custom_css_hash);
+                                LS.set('custom_css_hash', packet.custom_css_hash);
                                 
                                 window.location.reload();
                             }

@@ -12,7 +12,7 @@ export default class Button {
         EL.make('div', {
             context: this,
             $: 'root',
-            class: 'button',
+            class: 'button' + (data.class ? ` ${data.class}` : '') + (data.id ? ` widget_${data.id}` : ''),
             style: {
                 background: col,
                 color: contrastColor(col, contrast),

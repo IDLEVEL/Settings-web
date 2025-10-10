@@ -23,7 +23,6 @@ export const codes = [
     'total',
     'rssi',
     'custom_hash',
-
     'label',
     'title',
     'text',
@@ -89,4 +88,5 @@ export const codes = [
     's_ver',
     'f_ver',
     'use_fs',
+    'custom_css_hash',
 ];

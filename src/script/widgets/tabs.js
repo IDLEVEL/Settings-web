@@ -16,7 +16,7 @@ export default class TabsWidget extends WidgetBase {
             $: 'tabs',
             children: this.options.map((x, i) => {
                 return {
-                    class: 'tab',
+                    class: 'tab' + (data.class ? ` ${data.class}` : '') + (data.id ? ` widget_${data.id}` : ''),
                     text: x.trim(),
                     events: {
                         click: () => {
