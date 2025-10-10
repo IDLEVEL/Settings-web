@@ -531,6 +531,7 @@ export default class Settings {
                     switch (upd.type) {
                         case 'notice': popup(upd.text, false); break;
                         case 'alert': popup(upd.text, true); break;
+                        case 'update_styles':  this.updateStyles(upd); break;
 
                         default:
                             if (this.widgets.has(upd.id)) {
@@ -553,6 +554,35 @@ export default class Settings {
                 }, 1);
                 break;
         }
+    }
+
+    updateStyles(upd)
+    {
+        document.querySelectorAll(upd.query_selector).forEach((el) =>
+        {
+            if(upd.add_class)
+            {
+                upd.add_class.split(' ').forEach(className =>
+                {
+                    if (className)
+                        el.classList.add(className);
+                });
+            }
+            
+            if(upd.remove_class)
+            {
+                upd.remove_class.split(' ').forEach(className =>
+                {
+                    if (className)
+                        el.classList.remove(className);
+                });
+            }
+
+            if(upd.set_style)
+            {
+                el.style = upd.set_style;
+            }
+        });
     }
 
     //#region UI

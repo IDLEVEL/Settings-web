@@ -89,4 +89,9 @@ export const codes = [
     'f_ver',
     'use_fs',
     'custom_css_hash',
+    'update_styles',
+    'query_selector',
+    'add_class',
+    'remove_class',
+    'set_style'
 ];
