@@ -14,7 +14,7 @@ export default function Page(p, data, title, sets, id) {
     for (let obj of data) {
         switch (obj.type) {
             case 'menu': MenuWidget(obj.title, obj, cur, sets, page); break;
-            case 'group': Group(obj.title, obj.content, cur, sets, page, obj.id); break;
+            case 'group': Group(obj.title, obj.content, cur, sets, page, obj); break;
             case 'buttons': Buttons(obj, cur, sets, page); break;
             case 'row': Row(obj, cur, sets, page); break;
             default: checkAndAppend(sets, page, obj); break;

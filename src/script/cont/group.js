@@ -4,12 +4,12 @@ import Row from "./row";
 import Buttons from "./buttons";
 import MenuWidget from "./menu";
 
-export default function Group(title, data, cur, sets, parent, id) {
+export default function Group(title, data, cur, sets, parent, obj) {
     if (!data.length) return;
 
     let g = [];
     let group = EL.make('div', {
-        class: 'group' + (id ? ` group_${id}` : ''),
+        class: 'group' + (obj.class_name ? ` ${obj.class_name}` : '') + (obj.id ? ` group_${obj.id}` : ''),
         children: [
             !!title && {
                 class: 'group_title',

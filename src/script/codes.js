@@ -93,5 +93,6 @@ export const codes = [
     'query_selector',
     'add_class',
     'remove_class',
-    'set_style'
+    'set_style',
+    'class_name'
 ];

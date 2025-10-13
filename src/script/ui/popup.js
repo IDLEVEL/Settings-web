@@ -1,7 +1,7 @@
 import { EL } from "@alexgyver/component";
 import './popup.css';
 
-export default function popup(text, error = true) {
+export default function popup(data, text, error = true) {
     let popup = EL.make('div', {
         class: 'popup',
         style: {

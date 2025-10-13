@@ -529,8 +529,8 @@ export default class Settings {
             case 'update':
                 for (let upd of packet.content) {
                     switch (upd.type) {
-                        case 'notice': popup(upd.text, false); break;
-                        case 'alert': popup(upd.text, true); break;
+                        case 'notice': popup(upd, upd.text, false); break;
+                        case 'alert': popup(upd, upd.text, true); break;
                         case 'update_styles':  this.updateStyles(upd); break;
 
                         default:

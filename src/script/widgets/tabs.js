@@ -12,11 +12,11 @@ export default class TabsWidget extends WidgetBase {
 
         this.addChild(EL.make('div', {
             context: this,
-            class: 'tabs',
+            class: 'tabs'+ (data.class_name ? ` ${data.class_name}` : '') + (data.id ? ` tabs_${data.id}` : ''),
             $: 'tabs',
             children: this.options.map((x, i) => {
                 return {
-                    class: 'tab' + (data.class ? ` ${data.class}` : '') + (data.id ? ` widget_${data.id}` : ''),
+                    class: 'tab',
                     text: x.trim(),
                     events: {
                         click: () => {
