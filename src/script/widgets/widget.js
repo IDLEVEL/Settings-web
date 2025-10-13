@@ -12,7 +12,7 @@ export default class WidgetBase {
         if (makeWidget) {
             EL.make('div', {
                 context: this,
-                class: 'widget' + (data.class ? ` ${data.class}` : '') + (data.id ? ` widget_${data.id}` : ''),
+                class: 'widget' + (data.class_name ? ` ${data.class_name}` : '') + (data.id ? ` widget_${data.id}` : ''),
                 $: 'root',
                 child: makeRow && {
                     class: 'widget_row',
