@@ -13,7 +13,7 @@ export default function MenuWidget(title, data, cur, sets, parent) {
 
     EL.config(widget.$root, {
         style: 'cursor:pointer',
-        class: (data.class_name ? ` ${data.class_name}` : '') + (data.id ? `menu_${data.id}` : ''),
+        class: (data.class_name ? ` ${data.class_name}` : '') + (data.id ? `id_${data.id}` : ''),
         events: {
             click: () => sets.openPage({ index: i, parent: cur }),
         }

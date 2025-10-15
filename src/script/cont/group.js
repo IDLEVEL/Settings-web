@@ -9,7 +9,7 @@ export default function Group(title, data, cur, sets, parent, obj) {
 
     let g = [];
     let group = EL.make('div', {
-        class: 'group' + (obj.class_name ? ` ${obj.class_name}` : '') + (obj.id ? ` group_${obj.id}` : ''),
+        class: 'group' + (obj.class_name ? ` ${obj.class_name}` : '') + (obj.id ? ` id_${obj.id}` : ''),
         children: [
             !!title && {
                 class: 'group_title',

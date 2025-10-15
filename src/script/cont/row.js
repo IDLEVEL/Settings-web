@@ -9,7 +9,7 @@ export default function Row(obj, cur, sets, parent) {
 
     let r = [];
     let row = EL.make('div', {
-        class: 'row' + (obj.class_name ? ` ${obj.class_name}` : '') + (obj.id ? ` row_${obj.id}` : ''),
+        class: 'row' + (obj.class_name ? ` ${obj.class_name}` : '') + (obj.id ? ` id_${obj.id}` : ''),
         children: [
             !!obj.title && {
                 class: 'group_title',

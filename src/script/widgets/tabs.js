@@ -12,7 +12,7 @@ export default class TabsWidget extends WidgetBase {
 
         this.addChild(EL.make('div', {
             context: this,
-            class: 'tabs'+ (data.class_name ? ` ${data.class_name}` : '') + (data.id ? ` tabs_${data.id}` : ''),
+            class: 'tabs'+ (data.class_name ? ` ${data.class_name}` : '') + (data.id ? ` id_${data.id}` : ''),
             $: 'tabs',
             children: this.options.map((x, i) => {
                 return {

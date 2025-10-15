@@ -558,7 +558,10 @@ export default class Settings {
 
     updateStyles(upd)
     {
-        document.querySelectorAll(upd.query_selector).forEach((el) =>
+        const selector = (upd.query_selector_id ? `.id_${upd.query_selector_id} ` : '') +
+            (upd.query_selector ?? '');
+        
+        document.querySelectorAll(selector).forEach((el) =>
         {
             if(upd.add_class)
             {
