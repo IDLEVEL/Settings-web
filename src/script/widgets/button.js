@@ -22,7 +22,7 @@ export default class Button {
                 children: [
                     {
                         tag: 'span',
-                        text: data.label ?? 'Button',
+                        html: data.label ?? 'Button',
                         $: 'btext',
                     },
                     {
